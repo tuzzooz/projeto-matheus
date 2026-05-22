@@ -1,9 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import dynamic from 'next/dynamic'
 import SideNote from '../components/SideNote'
 import VisionSimulator from '../components/VisionSimulator'
-import VisualPathwayCanvas from '../components/VisualPathwayCanvas'
+
+const VisualPathwayCanvas = dynamic(() => import('../components/VisualPathwayCanvas'), { ssr: false })
 
 const areaData = {
   olhos: {
