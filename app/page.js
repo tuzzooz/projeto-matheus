@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import SideNote from '../components/SideNote'
 import VisionSimulator from '../components/VisionSimulator'
 import VisualPathwayCanvas from '../components/VisualPathwayCanvas'
@@ -26,7 +26,6 @@ const areaData = {
 export default function Page() {
   const [selectedArea, setSelectedArea] = useState(null)
   const [lesionArea, setLesionArea] = useState(null)
-  const atlasData = useMemo(() => areaData, [])
 
   return (
     <main className="min-h-screen px-6 py-8 md:px-10">
@@ -44,7 +43,7 @@ export default function Page() {
           lesionArea={lesionArea}
           onSetLesion={setLesionArea}
           onClearLesion={() => setLesionArea(null)}
-          data={atlasData}
+          data={areaData}
         />
       </section>
       <VisionSimulator lesionArea={lesionArea} />
